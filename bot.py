@@ -29,12 +29,17 @@ COOKIE_FILE = pathlib.Path("youtube_cookies.txt")
 ytdl_opts = {
     "format": "bestaudio/best",
     "noplaylist": False,
-    **({"cookiefile": str(COOKIE_FILE)} if COOKIE_FILE.exists() else {}),
-    "http_headers": {"User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    )},
+    "http_headers": {
+        # cabezera de un Android moderno
+        "User-Agent": (
+            "Mozilla/5.0 (Linux; Android 13; Pixel 6) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/124.0.0.0 Mobile Safari/537.36"
+        )
+    },
+    "extractor_args": {
+        "youtube": "player_client=android"
+    },
     "quiet": True,
 }
 ytdl = yt_dlp.YoutubeDL(ytdl_opts)
