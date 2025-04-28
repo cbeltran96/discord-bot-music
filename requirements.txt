@@ -1,0 +1,5 @@
+discord.py==2.3.2       # conexión con Discord + voz
+yt-dlp==2025.04.27      # descarga/stream de YouTube (videos y playlists)
+spotipy==2.25.1         # acceso a la API de Spotify (pistas y playlists)
+python-dotenv==1.0.1    # cargar variables de entorno desde .env
+PyNaCl==1.5.0           # backend de cifrado de voz que exige discord.py
